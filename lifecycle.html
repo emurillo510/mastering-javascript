@@ -13,6 +13,10 @@
     <body>
         <ul id="first"></ul>
         <script>
+
+            /*
+                this addMessage function takes a target element and appends a message to that element.
+            */
             function addMessage(element, message) {
                 var messageElement = document.createElement('li');
                 messageElement.textContent = message;
@@ -24,6 +28,29 @@
 
             var first = document.getElementById('first');
             addMessage(first, "Page loading");
+        </script>
+
+        <ul id="second"></ul>
+        <script>
+            
+            /* Listeners */
+
+            /* attaches mouse move event handler to body */
+            var body = document.body;
+
+            body.addEventListener("mousemove", function(){
+                var second = document.getElementById('second');
+                addMessage(second, "Event: mousemove");
+            });
+
+            /* attaches click event to handler body */
+
+            
+
+
+
+
+
         </script>
     </body>
 </html>
