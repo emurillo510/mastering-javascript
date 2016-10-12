@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+    <head>
+        <script>
+            #first {
+                color: green;
+            }
+
+            #second {
+                color: red;
+            }
+        </script>
+    </head>
+    <body>
+        <ul id="first"></ul>
+        <script>
+            function addMessage(element, message) {
+                var messageElement = document.createElement('li');
+                messageElement.textContent = message;
+
+                element.appendChild(messageElement);
+
+                return element;
+            }
+
+            var first = document.getElementById('first');
+            addMessage(first, "Page loading");
+        </script>
+    </body>
+</html>
