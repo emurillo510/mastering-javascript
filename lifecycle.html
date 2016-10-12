@@ -1,6 +1,6 @@
 <!DOCTYPE html>
     <head>
-        <script>
+        <style>
             #first {
                 color: green;
             }
@@ -8,7 +8,7 @@
             #second {
                 color: red;
             }
-        </script>
+        </style>
     </head>
     <body>
         <ul id="first"></ul>
@@ -49,6 +49,107 @@
                 var second = document.getElementById('second');
                 addMessage(second, "Event: mouseclick");
             });
+
+
+            /*
+
+                Concepts:
+
+                document
+                document.body
+                textContent();
+                appendChild();
+                addEventListener(); //mousemove //click
+
+
+                The page-building phase:
+
+                    Before a web application can be interacted with or even displayed, the page must be built from the information in the repsonse received from the server (usually HTML, CSS and JavaScript code).
+                    The goal of this page-building phase is done in two steps:
+                    
+                    1] Parsing the HTML and building the Document Object Model(DOM) (browser processing HTML)
+                    2] Executing the JavaScript code (happens in script tags)
+
+                    Parsing the HTML and building the DOM
+
+                    As the page loads the browser creates the DOM object with the given HTML until the first script tag is reached.
+
+
+
+                    IMPORTANT NOTE:
+
+                    It's important to emphasize that HTML and DOM are closely linked. With the DOM being created by the HTML.
+                    HTML is the blueprint the browser follows when constructing the iniital DOM.
+                    The browser can fix problems that it finds with this blueprint in order to create a valid DOM.
+
+                    The browser can silently fix by constructing correct HTML.
+
+
+                Executing JavaScript Code:
+
+                    All JavaScript code contained in the script element is executed by the browser's JavaScript engine. SpiderMonkey, V8, Chakra.
+
+                    Because the primary purpose of JavaScript code is to provide dytnamicity to the page, the browser provides an API through a global object that can be used by the JavaScript engine to interact with it.
+
+
+                    Concepts:
+
+                    Global objects in JavaScript (browser context)
+
+                    Window Object:
+                    
+                    The primary global object that the browser exposes to the JavaScript engine is the window object, which represents the window in which a page is contained.
+                    The window object is the global object which all other global objects, global variables (even user-defined ones), and browser APIs are accessible.
+
+                    Document Object:
+                    One of the most important properties of the global window object is document, which represents the DOM of the current page.
+                    By using this object, the JavaScript code can alter the DOM of the page to any degree, by modifying or removing existing elements, and even creating inserting new ones.
+
+                    // You can find some Web Api stuff at mozilla website (google search web api mozilla)
+
+                    Global Code vs Function Code:
+
+                    Global code is executed automatically by the JavaScript engine in a straight forward fashion, line by line as it's encountered.
+                    
+                    function addMessage() {
+
+
+                    }
+
+                    var first = document.getElementById();
+
+
+                    On the other hand, function code, in order to be executed, has to be called by something else: either by global code
+                    by some other function ir by the browser.
+
+                
+                Executing JavaScript cod ein the page-building phase:
+
+                    When the browser reaches the script node in the page-building phase, it pauses the DOM construction based on HTML code
+                    and starts executing JavaScript code instead.
+
+                    This means executing the global JavaScript code contained in the script element (and functions called by the global code are also executed).
+
+                    People tend to put the script tags on the bottom of the page because you don't have to worry about elements not being rendered yet.
+
+                    Global state of JavaScript application persist in the meantime. All user-defined global variables created during the execution of JavaScript
+                    runtime starts executing the contained JavaScript code in one script element are normally accessible to JavaScript code in other script elements.
+
+                    This happens because the global window object, which stores all global JavaScript variable, is alive and accessible during the entire lifecycle of the page.
+
+
+
+
+                Event Handling:
+
+                
+
+                    
+
+
+
+
+            */
 
 
         </script>
