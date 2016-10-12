@@ -45,10 +45,10 @@
 
             /* attaches click event to handler body */
 
-            
-
-
-
+            body.addEventListener("click", function() {
+                var second = document.getElementById('second');
+                addMessage(second, "Event: mouseclick");
+            });
 
 
         </script>
